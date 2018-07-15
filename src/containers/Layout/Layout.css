@@ -1,0 +1,16 @@
+.app-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+}
+
+@media(min-width: 768px) {
+  .app-wrapper {
+    width: 700px;
+  }
+}

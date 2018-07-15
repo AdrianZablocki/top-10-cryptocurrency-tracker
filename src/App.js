@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 
+import Layout from './hoc/Layout/Layout';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        Top 10 cryptocurrency tracker!!!
+      <Layout >
+        <div>
+        <ul>
+          <li>List of cryptocurrencies</li>
+        </ul>
       </div>
+    </Layout>
     );
   }
 }
