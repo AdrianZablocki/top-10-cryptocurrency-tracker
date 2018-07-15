@@ -9,17 +9,23 @@ import './CoinList.css';
 class CoinList extends Component {
   componentDidMount() {
     this.props.onFetchCoinsData();
-    console.log(this.props.coins)
   }
   render() {
-    console.log(this.props)
+    let coins;
+    if(this.props.coins) {
+      coins = this.props.coins.map(coin => {
+        return <CoinCard 
+                key={coin.id}
+                coinSymbol={coin.symbol}
+                coinName={coin.name}
+                coinPrice={coin.quotes.USD.price.toFixed(2)}
+                moneySymbol="$" />
+      })
+    }
+
     return (
       <ul className="list-wrapper">
-        <CoinCard 
-          coinSymbol="$"
-          coinName="USD"
-          coinPrice="3.45"
-          moneySymbol="ZŁ" />
+        {coins}
       </ul>
     )
   }
@@ -35,7 +41,5 @@ const mapDispatchToProps = dispatch => {
     onFetchCoinsData: () => dispatch(actions.fetchCoins())
   }
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinList);
