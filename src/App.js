@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Layout from './containers/Layout/Layout';
-import CoinCard from './components/CoinCard/CoinCard';
+import CoinList from './components/CoinList/CoinList';
 
 import './App.css';
 
@@ -9,15 +9,7 @@ class App extends Component {
   render() {
     return (
       <Layout >
-        <div>
-          <ul>
-            <CoinCard 
-              coinSymbol="$"
-              coinName="USD"
-              coinPrice="3.45"
-              moneySymbol="ZŁ" />
-          </ul>
-        </div>
+        <CoinList />
       </Layout>
     );
   }
