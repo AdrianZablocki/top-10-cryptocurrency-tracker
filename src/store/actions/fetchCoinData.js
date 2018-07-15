@@ -24,10 +24,13 @@ export const fetchCoinsFail = (error) => {
 export const fetchCoins = () => {
   return dispatch => {
     dispatch(fetchCoinsStart());
-    axios.get('/v2/ticker/?limit=10')
+    axios.get('/v2/ticker/?limit=100')
       .then(response => {
         let data = response.data.data;
         data = Object.keys(data).map(coin => data[coin]);
+        data.sort((a, b) => {
+          return  b.quotes.USD.market_cap -a.quotes.USD.market_cap;
+        })
         dispatch(fetchCoinsSuccess(data));
       })
       .catch(error => {

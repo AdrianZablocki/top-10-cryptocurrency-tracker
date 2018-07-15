@@ -1,8 +1,9 @@
-import React, { Component } from "react";
 import { connect } from 'react-redux';
+import React, { Component } from "react";
 
-import CoinCard from '../CoinCard/CoinCard';
 import * as actions from '../../store/actions/index';
+import CoinCard from '../CoinCard/CoinCard';
+import icons from './CoinIcons';
 
 import './CoinList.css';
 
@@ -16,6 +17,8 @@ class CoinList extends Component {
       coins = this.props.coins.map(coin => {
         return <CoinCard 
                 key={coin.id}
+                imgSrc={icons[coin.symbol]}
+                title={coin.name}
                 coinSymbol={coin.symbol}
                 coinName={coin.name}
                 coinPrice={coin.quotes.USD.price.toFixed(2)}
