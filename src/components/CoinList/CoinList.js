@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import * as actions from '../../store/actions/index';
 import CoinCard from '../CoinCard/CoinCard';
 import icons from './CoinIcons';
+import Spinner from '../UI/Spiner/Spinner';
 
 import './CoinList.css';
 
@@ -15,7 +16,6 @@ class CoinList extends Component {
     let coins;
     if(this.props.coins) {
       coins = this.props.coins.map(coin => {
-        console.log(coin)
         return <CoinCard 
                 key={coin.id}
                 imgSrc={icons[coin.symbol]}
@@ -29,6 +29,9 @@ class CoinList extends Component {
                 change_7d={coin.quotes.USD.percent_change_7d} />
       })
     }
+    if(this.props.loading) {
+      coins = <Spinner />
+    }
   
     return (
       <ul className="list-wrapper">
@@ -40,7 +43,8 @@ class CoinList extends Component {
 
 const mapStateToProps = state => {
   return {
-    coins: state.coins.coins
+    coins: state.coins.coins,
+    loading: state.coins.loading
   }
 };
 const mapDispatchToProps = dispatch => {
