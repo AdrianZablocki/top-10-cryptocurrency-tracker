@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Layout from './containers/Layout/Layout';
+import CoinCard from './components/CoinCard/CoinCard';
 
 import './App.css';
 
@@ -9,11 +10,15 @@ class App extends Component {
     return (
       <Layout >
         <div>
-        <ul>
-          <li>List of cryptocurrencies</li>
-        </ul>
-      </div>
-    </Layout>
+          <ul>
+            <CoinCard 
+              coinSymbol="$"
+              coinName="USD"
+              coinPrice="3.45"
+              moneySymbol="ZŁ" />
+          </ul>
+        </div>
+      </Layout>
     );
   }
 }
