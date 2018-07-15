@@ -26,11 +26,12 @@ export const fetchCoins = () => {
     dispatch(fetchCoinsStart());
     axios.get('/v2/ticker/?limit=10')
       .then(response => {
-        const data = response;
+        let data = response.data.data;
+        data = Object.keys(data).map(coin => data[coin]);
         dispatch(fetchCoinsSuccess(data));
       })
       .catch(error => {
         dispatch(fetchCoinsFail(error));
-      })
+      });
   }
 };
