@@ -2,6 +2,7 @@
   "name": "top-10-cryptocurrency-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://myname.github.io/top-10-cryptocurrency-tracker",
   "dependencies": {
     "ajv": "^6.5.2",
     "axios": "^0.18.0",
