@@ -15,6 +15,7 @@ class CoinList extends Component {
     let coins;
     if(this.props.coins) {
       coins = this.props.coins.map(coin => {
+        console.log(coin)
         return <CoinCard 
                 key={coin.id}
                 imgSrc={icons[coin.symbol]}
@@ -22,10 +23,13 @@ class CoinList extends Component {
                 coinSymbol={coin.symbol}
                 coinName={coin.name}
                 coinPrice={coin.quotes.USD.price.toFixed(2)}
-                moneySymbol="$" />
+                moneySymbol="$"
+                change_1h={coin.quotes.USD.percent_change_1h}
+                change_24h={coin.quotes.USD.percent_change_24h}
+                change_7d={coin.quotes.USD.percent_change_7d} />
       })
     }
-
+  
     return (
       <ul className="list-wrapper">
         {coins}

@@ -24,7 +24,7 @@ export const fetchCoinsFail = (error) => {
 export const fetchCoins = () => {
   return dispatch => {
     dispatch(fetchCoinsStart());
-    axios.get('/v2/ticker/?limit=100')
+    axios.get('/v2/ticker/?limit=10')
       .then(response => {
         let data = response.data.data;
         data = Object.keys(data).map(coin => data[coin]);
