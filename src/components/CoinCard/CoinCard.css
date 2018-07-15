@@ -99,7 +99,12 @@
 }
 
 .card-price__changed-minus:after {
-  border-bottom: 4px solid #FF1302;  
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #FF1302;
+  border-bottom: none;  
+  right: 2px;
+  top: 10px;
 }
 
 @media(min-width: 375px) {
