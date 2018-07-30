@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Button from '../UI/Button/Button';
 import './CoinCard.css';
 
 const coinCard = (props) => (
@@ -15,6 +16,7 @@ const coinCard = (props) => (
         <span className="card-price">{props.coinPrice}</span>  
         <span className="card-price card-price__symbol">{props.moneySymbol}</span>  
       </div>
+      <Button btnStyle="button button-more" text="more" />
     </div>
     
     <div className="card-change__wrapper">

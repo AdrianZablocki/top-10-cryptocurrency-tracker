@@ -10,6 +10,7 @@
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #031D35;
+  position: relative;
 }
 
 .card-img {
@@ -32,7 +33,7 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0 0 10px 0;
+  margin: 0;
 }
 .card-price {
   padding-right: 5px;
@@ -57,59 +58,17 @@
 .card-price__changed-plus,
 .card-price__changed-minus {
   color: #07CC00;
-  padding-right: 12px;
+  padding-right: 14px;
 }
 
 .card-price__changed-minus {
   color: #FF1302;
 }
 
-.card-price__changed-plus:before,
-.card-price__changed-plus:after,
-.card-price__changed-minus:before,
-.card-price__changed-minus:after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-}
-
-.card-price__changed-plus:before,
-.card-price__changed-minus:before {
-  width: 2px;
-  height: 10px;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #07CC00;
-}
-
-.card-price__changed-plus:after,
-.card-price__changed-minus:after {
-  width: 0; 
-  height: 0; 
-  right: 2px;
-  top: 1px;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid #07CC00;
-}
-
-.card-price__changed-minus:before {
-  background-color: #FF1302;
-}
-
-.card-price__changed-minus:after {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid #FF1302;
-  border-bottom: none;  
-  right: 2px;
-  top: 10px;
-}
-
 @media(min-width: 375px) {
   .card-price__changed {
     font-size: 12px;
+    padding-left: 5px;
   }
 }
 
