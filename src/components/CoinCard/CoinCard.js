@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
 
 import Button from '../UI/Button/Button';
 import PriceChange from './PriceChange/PriceChange';
@@ -18,7 +20,7 @@ class CoinCard extends Component {
   }
 
   openModalHandler = (event) => {
-    console.log(event.target.id);
+    this.props.onFetchChartData(event.target.id);
     this.setState({ showModal: true });
   }
 
@@ -45,4 +47,17 @@ class CoinCard extends Component {
   }
 }
 
-export default CoinCard;
+const mapStateToProps = state => {
+  return {
+    chart: state.chart.chart,
+    loading: state.chart.loading
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchChartData: (id) => dispatch(actions.fetchChartData(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoinCard);

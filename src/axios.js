@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://api.coinmarketcap.com',
-    chrtURL: 'https://rest.coinapi.io'
+    baseURL: 'https://api.coinmarketcap.com'
 });
 
 export default instance;
