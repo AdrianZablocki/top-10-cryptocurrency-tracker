@@ -8,7 +8,9 @@ const initialstate = {
 };
 
 const fetchChartStart = (state) => {
-  return updateObject(state, {loading: true})
+  return updateObject(state, {
+    loading: true
+  });
 };
 
 const fetchChartSuccess = (state, action) => {
@@ -21,7 +23,7 @@ const fetchChartSuccess = (state, action) => {
 const fetchChartFail = (state) => {
   return updateObject(state, {
     loading: false,
-    error: true
+    error: true,
   });
 };
 

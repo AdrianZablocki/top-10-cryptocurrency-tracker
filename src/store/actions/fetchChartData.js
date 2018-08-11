@@ -17,7 +17,7 @@ export const fetchChartSuccess = (data) => {
 export const fetchChartFail = (error) => {
   return {
     type: actionTypes.FETCHING_CHART_DATA_FAIL,
-    chart: error
+    error: error
   };
 };
 
