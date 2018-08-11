@@ -58,7 +58,33 @@
 .card-price__changed-plus,
 .card-price__changed-minus {
   color: #07CC00;
-  padding-right: 14px;
+  padding-right: 15px;
+}
+
+.card-price__changed-plus:after,
+.card-price__changed-minus:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.card-price__changed-plus:after,
+.card-price__changed-minus:after {
+  width: 0; 
+  height: 0; 
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid #07CC00;
+}
+
+.card-price__changed-minus:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #FF1302;
+  border-bottom: none;  
 }
 
 .card-price__changed-minus {
@@ -68,7 +94,6 @@
 @media(min-width: 375px) {
   .card-price__changed {
     font-size: 12px;
-    padding-left: 5px;
   }
 }
 

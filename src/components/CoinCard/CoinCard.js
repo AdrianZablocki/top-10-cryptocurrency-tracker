@@ -5,6 +5,7 @@ import PriceChange from './PriceChange/PriceChange';
 import CoinLogo from './CoinLogo/CoinLogo';
 import Price from './Price/Price';
 import Modal from '../UI/Modal/Modal';
+import Chart from '../Chart/Chart';
 import './CoinCard.css';
 
 class CoinCard extends Component {
@@ -16,17 +17,18 @@ class CoinCard extends Component {
     this.setState({ showModal: false })
   }
 
-  openModalHandler = () => {
-    this.setState({ showModal: true })
+  openModalHandler = (event) => {
+    console.log(event.target.id);
+    this.setState({ showModal: true });
   }
 
   render() {
     return (
-      <div className="card-wrapper" id={this.props.id}>
+      <div className="card-wrapper">
         <div className="card">
           <CoinLogo img={this.props.imgSrc} alt={this.props.title} symbol={this.props.coinSymbol}/>
           <Price symbol={this.props.moneySymbol} price={this.props.coinPrice} name={this.props.coinName} />
-          <Button btnStyle="button button-more" text="more" clicked={this.openModalHandler} />
+          <Button btnStyle="button button-more" text="more" id={this.props.id} clicked={this.openModalHandler} />
         </div>
         <div className="card-change__wrapper">
           <span className="card-price card-price__changed">Change:</span> 
@@ -36,7 +38,7 @@ class CoinCard extends Component {
         </div>
 
         <Modal show={this.state.showModal} modalClosed={this.closeModalHandler} > 
-          <div>more data and chart</div> 
+          <Chart />
         </Modal>
       </div>
     )

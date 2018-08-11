@@ -16,7 +16,6 @@ class CoinList extends Component {
     let coins;
     if(this.props.coins) {
       coins = this.props.coins.map(coin => {
-        console.log(coin)
         return <CoinCard 
                 key={coin.id}
                 id={coin.symbol}
