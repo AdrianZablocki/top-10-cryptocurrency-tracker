@@ -22,6 +22,7 @@ const fetchChartSuccess = (state, action) => {
 
 const fetchChartFail = (state) => {
   return updateObject(state, {
+    chart: null,
     loading: false,
     error: true,
   });

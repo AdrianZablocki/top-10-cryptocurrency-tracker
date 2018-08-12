@@ -6,11 +6,11 @@ import './Chart.css';
 class Chart extends Component {
   state = {
     chartData: {
-      labels: ['boston', 'new york'],
+      labels: this.props.labels,
       datasets: [ 
         {
-          label: 'Population',
-          data: [2, 4]
+          label: 'Price USD',
+          data: this.props.prices
         }
       ]
     }
@@ -20,10 +20,21 @@ class Chart extends Component {
     return (
       <div className="chart">
         <Line
-          data={this.state.chartData}
-          options={{
-            maintainAspectRatio: false
-          }}
+          data = {this.state.chartData}
+          options = {
+            {
+              //maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: 'Some currency',
+                fontSize: 12
+              },
+              legend: {
+                display: true,
+                position: this.props.legendPosition
+              }
+            }
+          }
         />
       </div>
     )

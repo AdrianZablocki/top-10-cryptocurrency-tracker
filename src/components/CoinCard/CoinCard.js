@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions/index';
+import React, { Component } from 'react';
 
+import * as actions from '../../store/actions/index';
 import Button from '../UI/Button/Button';
-import PriceChange from './PriceChange/PriceChange';
-import CoinLogo from './CoinLogo/CoinLogo';
-import Price from './Price/Price';
-import Modal from '../UI/Modal/Modal';
 import Chart from '../Chart/Chart';
+import CoinLogo from './CoinLogo/CoinLogo';
+import Modal from '../UI/Modal/Modal';
+import Price from './Price/Price';
+import PriceChange from './PriceChange/PriceChange';
+
 import './CoinCard.css';
 
 class CoinCard extends Component {
   state = {
-    showModal: false
+    showModal: false,
+    prices: null,
+    labels: null
   }
 
   closeModalHandler = () => {
@@ -21,7 +24,10 @@ class CoinCard extends Component {
 
   openModalHandler = (event) => {
     this.props.onFetchChartData(event.target.id);
-    this.setState({ showModal: true });
+
+    this.setState({ 
+      showModal: true,
+    });
   }
 
   render() {
@@ -40,7 +46,14 @@ class CoinCard extends Component {
         </div>
 
         <Modal show={this.state.showModal} modalClosed={this.closeModalHandler} > 
-          <Chart />
+          {
+            this.props.loading === false ?
+            <Chart 
+              legendPosition="bottom" 
+              prices={ this.props.chart ? this.props.chart.prices : null } 
+              labels={ this.props.chart ? this.props.chart.dates : null }
+            /> : null
+          }
         </Modal>
       </div>
     )
