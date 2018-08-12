@@ -14,8 +14,8 @@ import './CoinCard.css';
 class CoinCard extends Component {
   state = {
     showModal: false,
-    prices: null,
-    labels: null
+    // prices: null,
+    // labels: null
   }
 
   closeModalHandler = () => {
@@ -27,10 +27,12 @@ class CoinCard extends Component {
 
     this.setState({ 
       showModal: true,
+      chartHeight: (window.innerWidth <= 768) ? 200 : 150
     });
   }
 
   render() {
+    
     return (
       <div className="card-wrapper">
         <div className="card">
@@ -45,15 +47,17 @@ class CoinCard extends Component {
           <PriceChange changeClass={this.props.change_7d} text="7D" change={this.props.change_7d}/>
         </div>
 
-        <Modal show={this.state.showModal} modalClosed={this.closeModalHandler} > 
+        <Modal show={this.state.showModal} modalClose={this.closeModalHandler} > 
           {
             this.props.loading === false ?
             <Chart 
-              legendPosition="bottom" 
+              height={this.state.chartHeight}
+              id={ this.props.chart ? this.props.chart.id : null } 
               prices={ this.props.chart ? this.props.chart.prices : null } 
               labels={ this.props.chart ? this.props.chart.dates : null }
             /> : null
           }
+          <Button btnStyle="button button-more" text="close"  clicked={this.closeModalHandler} />
         </Modal>
       </div>
     )

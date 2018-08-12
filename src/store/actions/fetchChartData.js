@@ -33,6 +33,7 @@ export const fetchChartData = (id) => {
       .then(response => {
         let data = response.data;      
         let chartData = {
+          id: id,
           prices: [],
           dates: []
         };
