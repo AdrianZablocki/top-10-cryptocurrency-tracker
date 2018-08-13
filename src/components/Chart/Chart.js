@@ -36,9 +36,11 @@ class Chart extends Component {
             {
               //maintainAspectRatio: false,
               title: {
-                text: this.props.id + ' currency',
+                text: this.props.id + ' CURRENCY',
                 fontSize: 24,
                 fontColor: '#FFF',
+                fontStyle: 'normal',
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 display: true,
                 lineHeight: 0,
                 padding: 40,
@@ -84,7 +86,7 @@ class Chart extends Component {
                     color: "#FFF"
                   },
                   ticks: {
-                    display: false,
+                    display: true,
                     fontColor: "#FFF"
                   }
                 }],

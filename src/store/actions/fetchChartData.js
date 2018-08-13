@@ -24,7 +24,7 @@ export const fetchChartFail = (error) => {
 export const fetchChartData = (id) => {
   const key = '306CF39B-7702-47C6-8C4C-6CB6601864F7';
   let limit = null;
-  (window.innerWidth <= 768) ? limit = 14 : limit = 60;
+  (window.innerWidth <= 768) ? limit = 14 : limit = 61;
 
 
   return dispatch => {
