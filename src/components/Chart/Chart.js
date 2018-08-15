@@ -11,7 +11,6 @@ class Chart extends Component {
         {
           label: 'Price USD',
           data: this.props.prices,
-          //backgroundColor: 'rgb(255, 99, 132)',
         }
       ]
     }
@@ -34,11 +33,10 @@ class Chart extends Component {
 	        height={this.props.height}
           options = {
             {
-              //maintainAspectRatio: false,
               title: {
                 text: this.props.id + ' CURRENCY',
                 fontSize: 24,
-                fontColor: '#FFF',
+                fontColor: 'rgb(3, 29, 53)',
                 fontStyle: 'normal',
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 display: true,
@@ -47,22 +45,21 @@ class Chart extends Component {
               },
               legend: {
                 display: false,
-                //position: this.props.legendPosition
               },
               elements: {
                 point: {
-                  radius: 4,
+                  radius: 5,
                   hoverRadius: 6,
                   borderWidth: 1,
                   hoverBorderWidth: 2,
-                  backgroundColor: 'rgba(255, 255, 255, .8)',
-                  borderColor: 'rgb(255, 255, 255)'
+                  backgroundColor: 'rgb(3, 29, 53, 0.5)',
+                  borderColor: 'rgb(3, 29, 53)'
                 },
                 line: {
                   tension: 0.4,
                   borderWidth: 2,
-                  backgroundColor: 'rgba(255, 255, 255, .2)',
-                  borderColor: 'rgb(255, 255, 255)',
+                  backgroundColor: 'rgb(3, 29, 53, .5)',
+                  borderColor: 'rgb(3, 29, 53)',
                   borderCapStyle: 'round'
                 },
 
@@ -72,22 +69,22 @@ class Chart extends Component {
                   gridLines: {
                     display: false,
                     drawBorder: true,
-                    color: "#FFF"
+                    color: "rgb(3, 29, 53)"
                   },
                   ticks: {
                     display: true,
-                    fontColor: "#FFF"
+                    fontColor: "rgb(3, 29, 53)"
                   }
                 }],
                 yAxes: [{
                   gridLines: {
                     display: false,
                     drawBorder: true,
-                    color: "#FFF"
+                    color: "rgb(3, 29, 53)"
                   },
                   ticks: {
                     display: true,
-                    fontColor: "#FFF"
+                    fontColor: "rgb(3, 29, 53)"
                   }
                 }],
               }

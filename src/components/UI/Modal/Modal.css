@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   z-index: 500;
-  background-color: rgb(3, 29, 53);
+  background-color: #FFF;
   width: 96%;
   border: 1px solid #838282;
   border-radius: 6px;

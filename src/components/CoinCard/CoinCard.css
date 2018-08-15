@@ -91,6 +91,12 @@
   color: #FF1302;
 }
 
+.modal .button-more {
+  color: rgb(3, 29, 53);
+  font-size: 14px;
+  font-weight: 400;
+}
+
 @media(min-width: 375px) {
   .card-price__changed {
     font-size: 12px;
