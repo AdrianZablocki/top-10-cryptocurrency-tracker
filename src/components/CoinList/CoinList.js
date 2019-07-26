@@ -11,6 +11,7 @@ import './CoinList.css';
 class CoinList extends Component {
   componentDidMount() {
     this.props.onFetchCoinsData();
+    console.log(this.props)
   }
   render() {
     let coins;
