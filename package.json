@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://adrianzablocki.github.io/top-10-cryptocurrency-tracker",
   "dependencies": {
-    "ajv": "^6.5.2",
+    "ajv": "^6.12.3",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.1",
     "babel-core": "6.26.0",
